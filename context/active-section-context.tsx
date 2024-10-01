@@ -17,6 +17,12 @@ type ActiveSectionContextType = {
 export const ActiveSectionContext =
   createContext<ActiveSectionContextType | null>(null);
 
+/**
+ * Provides a context for managing the active section and related timing in a React application.
+ * @param {Object} props - The component props.
+ * @param {React.ReactNode} props.children - The child components to be wrapped by the context provider.
+ * @returns {JSX.Element} A context provider component that manages active section state.
+ */
 export default function ActiveSectionContextProvider({
   children,
 }: ActiveSectionContextProviderProps) {
@@ -31,6 +37,11 @@ export default function ActiveSectionContextProvider({
         timeOfLastClick,
         setTimeOfLastClick,
       }}
+    /**
+     * Custom hook to access the ActiveSectionContext
+     * @returns {Object} The context object containing the active section state and setter function
+     * @throws {Error} If used outside of an ActiveSectionContextProvider
+     */
     >
       {children}
     </ActiveSectionContext.Provider>
