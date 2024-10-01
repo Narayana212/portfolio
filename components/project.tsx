@@ -7,6 +7,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 type ProjectProps = (typeof projectsData)[number];
 
+/**
+ * Renders a project component with animation effects and responsive layout
+ * @param {Object} props - The props object containing project details
+ * @param {string} props.title - The title of the project
+ * @param {string} props.description - A brief description of the project
+ * @param {string[]} props.tags - An array of tags associated with the project
+ * @param {string} props.imageUrl - The URL of the project image
+ * @returns {JSX.Element} A motion div containing the project information and image
+ */
 export default function Project({
   title,
   description,
@@ -37,6 +46,11 @@ export default function Project({
             {description}
           </p>
           <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+            /**
+             * Renders a list of tags as styled list items
+             * @param {Array} tags - An array of tag strings to be rendered
+             * @returns {Array} An array of JSX elements representing styled list items for each tag
+             */
             {tags.map((tag, index) => (
               <li
                 className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"

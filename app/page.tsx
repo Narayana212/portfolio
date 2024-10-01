@@ -6,6 +6,10 @@ import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
 
+/**
+ * Renders the Home page component
+ * @returns {JSX.Element} The main content of the Home page, including Intro, About, Projects, Skills, Experience, and Contact sections
+ */
 export default function Home() {
   return (
     <main className="flex flex-col items-center px-4">

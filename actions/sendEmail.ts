@@ -7,6 +7,11 @@ import ContactFormEmail from "@/email/contact-form-email";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+/**
+ * Sends an email using the provided form data.
+ * @param {FormData} formData - The form data containing sender email and message.
+ * @returns {Promise<Object>} An object containing either the sent email data or an error message.
+ */
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("senderEmail");
   const message = formData.get("message");

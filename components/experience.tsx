@@ -11,10 +11,20 @@ import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
 
+/**
+ * Renders the Experience component, displaying a vertical timeline of professional experiences.
+ * @returns {JSX.Element} A section containing a vertical timeline of experiences.
+ */
 export default function Experience() {
   const { ref } = useSectionInView("Journey");
   const { theme } = useTheme();
 
+  /**
+   * Renders a list of experience items as VerticalTimelineElements
+   * @param {Array} experiencesData - An array of experience objects containing details like title, company name, icon, link, and description points
+   * @param {string} theme - The current theme ('light' or 'dark') to determine styling
+   * @returns {ReactElement} A React Fragment containing VerticalTimelineElements for each experience item
+   */
   return (
     <section id="journey" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My Journey</SectionHeading>
@@ -71,6 +81,12 @@ export default function Experience() {
               </div>
 
               <ul className="mt-5 list-disc ml-5 space-y-2">
+                /**
+                 * Renders a list of experience points
+                 * @param {Object} experience - The experience object containing points
+                 * @param {Array} experience.points - An array of experience points to be rendered
+                 * @returns {JSX.Element} A list of rendered experience points as list items
+                 */
                 {experience.points.map((point, index) => (
                   <li
                     key={`experience-point-${index}`}

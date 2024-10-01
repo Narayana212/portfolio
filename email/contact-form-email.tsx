@@ -17,6 +17,13 @@ type ContactFormEmailProps = {
   senderEmail: string;
 };
 
+/**
+ * Renders an email template for contact form submissions
+ * @param {Object} props - The component props
+ * @param {string} props.message - The message content from the contact form
+ * @param {string} props.senderEmail - The email address of the sender
+ * @returns {JSX.Element} A React component representing the email structure
+ */
 export default function ContactFormEmail({
   message,
   senderEmail,

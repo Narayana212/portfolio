@@ -7,6 +7,10 @@ import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
+/**
+ * Renders the Header component with an animated navigation bar
+ * @returns {JSX.Element} A header element containing a motion div and a navigation menu
+ */
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
@@ -17,6 +21,14 @@ export default function Header() {
         className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
+      /**
+       * Renders a list of navigation links with animated effects
+       * @param {Array} links - An array of link objects containing name and hash properties
+       * @param {string} activeSection - The name of the currently active section
+       * @param {function} setActiveSection - Function to update the active section
+       * @param {function} setTimeOfLastClick - Function to update the time of the last click
+       * @returns {JSX.Element} A list of animated link items with active section highlighting
+       */
       ></motion.div>
 
       <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
@@ -37,6 +49,11 @@ export default function Header() {
                   }
                 )}
                 href={link.hash}
+                /**
+                 * Handles the click event for a navigation link
+                 * @param {void} - This function doesn't take any parameters directly
+                 * @returns {void} This function doesn't return a value
+                 */
                 onClick={() => {
                   setActiveSection(link.name);
                   setTimeOfLastClick(Date.now());

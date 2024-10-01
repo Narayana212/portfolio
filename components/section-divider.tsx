@@ -3,6 +3,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+/**
+ * Renders a vertical section divider with animation
+ * @returns {JSX.Element} A motion div element representing a section divider
+ */
 export default function SectionDivider() {
   return (
     <motion.div

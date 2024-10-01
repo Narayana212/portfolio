@@ -5,6 +5,10 @@ import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
+/**
+ * Renders the About section of a portfolio or personal website.
+ * @returns {JSX.Element} A motion-animated section containing information about the author's background and skills.
+ */
 export default function About() {
     const { ref } = useSectionInView("About");
 
