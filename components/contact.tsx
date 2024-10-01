@@ -8,6 +8,10 @@ import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 
+/**
+ * Renders a contact section component with a form for user interaction.
+ * @returns {JSX.Element} A motion-animated section containing a contact form and contact information.
+ */
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
 
@@ -41,6 +45,13 @@ export default function Contact() {
 
       <form
         className="mt-10 flex flex-col dark:text-black"
+        ```
+        /**
+         * Handles the form submission action for sending an email
+         * @param {FormData} formData - The form data containing email information
+         * @returns {Promise<void>} A promise that resolves when the email sending process is complete
+         */
+        ```
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
 
