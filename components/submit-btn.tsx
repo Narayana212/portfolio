@@ -2,6 +2,10 @@ import React from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
 
+/**
+ * Renders a submit button component with loading state and hover effects.
+ * @returns {JSX.Element} A button element with dynamic content based on form submission state.
+ */
 export default function SubmitBtn() {
   const { pending } = useFormStatus();
 
