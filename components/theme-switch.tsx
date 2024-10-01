@@ -4,6 +4,10 @@ import { useTheme } from "@/context/theme-context";
 import React from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 
+/**
+ * A component that renders a theme switch button to toggle between light and dark modes.
+ * @returns {JSX.Element} A button element that switches between sun and moon icons based on the current theme.
+ */
 export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
 
