@@ -2,8 +2,8 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import ytImg from "../public/narayanayt.png";
-import redditImg from "../public/reddit.png";
+import pingPandaImg from "../public/ping.png";
+import redditImg from "../public/queri.png";
 import chatImg from "../public/chat.png";
 
 
@@ -87,24 +87,24 @@ export const experiencesData =  [
 
 export const projectsData = [
   {
-    title: "Reddit Clone",
+    title: "PingPanda",
     description:
-      "Created Upvotes , Down Votes for Posts, comments Secured user data with Next-Auth.Implemented Uploading Images , Codes, Links , and a Well designed Editor for Posting. Implemented Infinite Scrolling, Clean UI and Proper Loading and Error States",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind","Mysql","Prisma"],
+      "Built a SaaS platform for real-time event notifications with a clean dashboard, Discord alerts, and Stripe payments. Designed a modern UI using shadcn-ui and implemented Clerk for secure authentication.",
+    tags: ["Next.js", "Clerk", "Stripe", "Discord", "TypeScript", "shadcn-ui"],
+    imageUrl: pingPandaImg,
+  },
+  {
+    title: "Queri",
+    description:
+      "Developed an AI-driven platform for querying PDFs with Pinecode for vector storage, LangChain for AI memory, and Stripe integration. Deployed on Vercel with tRPC and ReactQuery for seamless handling.",
+    tags: ["Next.js", "Prisma", "LangChain", "tRPC", "OpenAI"],
     imageUrl: redditImg,
   },
   {
-    title: "Nxt Watch",
+    title: "TranslateChat",
     description:
-      "Developed the Nxt Watch platform, a YouTube-inspired application where users can access various video categories, such as Trending, Gaming, and Saved videos,and search for specific content while customising the visual theme.",
-    tags: ["React", "React Context", "Rest Apis", "CSS","Bootstrap"],
-    imageUrl: ytImg,
-  },
-  {
-    title: "Nxt Trendz",
-    description:
-      "Implemented Nxt Trendz application which is a clone for ECommerce applications like Amazon, Flipkart where users can login and can see list of products with search, filters, sort by, etc..",
-    tags: ["React", "Bootstrap", "Rest Apis", "CSS", "JWT"],
+      "Created a multilingual chat app using Whisper for Speech-to-Text, Edge-TTS for Text-to-Speech, and Google Translate API. Designed a simple, user-friendly interface for smooth communication.",
+    tags: ["Next.js", "Whisper", "GoogleTrans", "Edge-TTS"],
     imageUrl: chatImg,
   },
 ] as const;
@@ -125,4 +125,11 @@ export const skillsData = [
   "PostgreSQL",
   "Python",
   "Framer Motion",
+  "MongoDB",
+  "tRPC",
+  "LangChain",
+  "OpenAI",
+  "Stripe",
+  "shadcn-ui",
+  "Pinecone",
 ] as const;
