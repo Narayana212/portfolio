@@ -4,14 +4,20 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = (typeof projectsData)[number] & {
+  githubUrl?: string;
+  liveUrl?: string;
+};
 
 export default function Project({
   title,
   description,
   tags,
   imageUrl,
+  githubUrl,
+  liveUrl,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -36,7 +42,7 @@ export default function Project({
           <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
             {description}
           </p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+          <ul className="flex flex-wrap mt-4 gap-2">
             {tags.map((tag, index) => (
               <li
                 className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
@@ -46,6 +52,28 @@ export default function Project({
               </li>
             ))}
           </ul>
+          <div className="flex mt-4 space-x-3">
+            {githubUrl && (
+              <Link
+                href={githubUrl}
+                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </Link>
+            )}
+            {liveUrl && (
+              <Link
+                href={liveUrl}
+                className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </Link>
+            )}
+          </div>
         </div>
 
         <Image
@@ -69,3 +97,4 @@ export default function Project({
     </motion.div>
   );
 }
+
